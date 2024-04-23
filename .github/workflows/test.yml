@@ -10,6 +10,11 @@ jobs:
       image: selenium/standalone-chrome:122.0  # Specify the Chrome version
 
     steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'  # Specify your Node.js version
+          
       - name: Check connectivity to Google
         run: |
           curl -s https://testingautomation.secure.stagenonprofitsoapbox.com/ > /dev/null
