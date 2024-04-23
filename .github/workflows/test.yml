@@ -1,0 +1,19 @@
+name: External Access Test
+
+on:
+  workflow_dispatch:  # This allows the workflow to be manually triggered
+
+jobs:
+  test-connection:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check connectivity to Google
+        run: |
+          curl -s https://www.google.com > /dev/null
+          if [ $? -eq 0 ]; then
+            echo "Successfully accessed Google."
+          else
+            echo "Failed to access Google."
+            exit 1
+          fi
