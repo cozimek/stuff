@@ -6,6 +6,8 @@ on:
 jobs:
   test-connection:
     runs-on: ubuntu-latest
+    container:
+      image: selenium/standalone-chrome:122.0  # Specify the Chrome version
 
     steps:
       - name: Check connectivity to Google
