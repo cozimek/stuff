@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: selenium/standalone-chrome:122.0  # Specify the Chrome version
+      options: --user root
 
     steps:
       - name: Set up Node.js
