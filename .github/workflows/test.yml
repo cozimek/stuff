@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: selenium/standalone-chrome:122.0  # Specify the Chrome version
-      options: --user root
+      options: --user root --shm-size='2gb'  # Increase shared memory size if necessary
 
     steps:
       - name: Checkout repository
@@ -28,3 +28,9 @@ jobs:
 
       - name: Run Selenium Test
         run: node test.js
+        env:
+          # Set environment variables for Chrome
+          CHROME_BIN: /usr/bin/google-chrome
+          HEADLESS: true
+          NO_SANDBOX: true
+          DISABLE_DEV_SHM_USAGE: true
