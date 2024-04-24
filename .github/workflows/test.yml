@@ -20,7 +20,11 @@ jobs:
           node-version: '20'  # Specify your Node.js version
       
       - name: Install Selenium WebDriver
-        run: npm install selenium-webdriver assert
+        run: |
+          npm install selenium-webdriver assert
+          npm install chromedriver --chromedriver-force-download
+          # Ensure the chromedriver is available in the PATH
+          export PATH=$PATH:$(npm bin)
 
       - name: Run Selenium Test
         run: node test.js
