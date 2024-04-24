@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: selenium/standalone-chrome:122.0  # Specify the Chrome version
-      options: --user root --shm-size='2gb'  # Increase shared memory size if necessary
+      options: --user root --shm-size=2gb  # Correct format for shared memory size
 
     steps:
       - name: Checkout repository
