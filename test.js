@@ -17,11 +17,11 @@ async function exampleTest() {
 
   try {
     // Navigate to Soapbox Engage
-    await driver.get('https://demo.secure.nonprofitsoapbox.com');
+    await driver.get('https://testingautomation.secure.stagenonprofitsoapbox.com');
 
     // Assert title
     let title = await driver.getTitle();
-    assert.strictEqual(title, "Non-Profit Soapbox Demo");
+    assert.strictEqual(title, "Login - SBX Testing Automation: Basic");
 
     console.log("Test passed: Page title is correct");
   } finally {
