@@ -17,7 +17,7 @@ async function exampleTest() {
 
   try {
     // Navigate to Soapbox Engage
-    await driver.get('https://testingautomation.secure.stagenonprofitsoapbox.com');
+    await driver.get('https://demo.secure.nonprofitsoapbox.com');
 
     // Assert title
     let title = await driver.getTitle();
