@@ -13,7 +13,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      
+      - name: Check IP
+        run: curl https://api.ipify.org
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
